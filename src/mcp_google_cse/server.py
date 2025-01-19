@@ -12,6 +12,8 @@ def google_search(search_term: str) -> Any:
     """
     Search the custom search engine using the search term.
     Regular query arguments can also be used, like appending site:reddit.com or after:2024-04-30.
+    If available and/or requested, the links of the search results should be used
+    in a follow-up request using a different tool to get the full content.
     Example: "claude.ai features site:reddit.com after:2024-04-30"
     :param search_term: The search term to search for, equaling the q argument in Google's search.
     :return: Search results containing the title, link and snippet of the search result.
