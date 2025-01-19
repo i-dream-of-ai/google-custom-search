@@ -1,5 +1,4 @@
 import os
-from os import environ
 from typing import Any, List
 
 from googleapiclient.discovery import build
@@ -17,10 +16,10 @@ def google_search(search_term: str) -> Any:
     :param search_term: The search term to search for, equaling the q argument in Google's search.
     :return: Search results containing the title, link and snippet of the search result.
     """
-    service = build(environ.get('SERVICE_NAME', 'customsearch'), "v1", developerKey=environ.get('API_KEY'))
+    service = build(os.getenv('SERVICE_NAME', 'customsearch'), "v1", developerKey=os.getenv('API_KEY'))
     response = service.cse().list(
         q=search_term,
-        cx=environ.get('ENGINE_ID'),
+        cx=os.getenv('ENGINE_ID'),
         cr=os.getenv('COUNTRY_REGION'),
         gl=os.getenv('GEOLOCATION', 'us'),
         lr=os.getenv('RESULT_LANGUAGE', 'lang_en'),
