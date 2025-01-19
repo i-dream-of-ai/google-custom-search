@@ -38,3 +38,7 @@ def __clean_up_snippets(items: List[dict]) -> None:
     """
     for item in items:
         item.update({k: v.replace('\xa0', ' ').strip() if k == 'snippet' else v for k, v in item.items()})
+
+
+def main():
+    mcp.run()
