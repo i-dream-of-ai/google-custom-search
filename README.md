@@ -70,7 +70,7 @@ Add to your `claude_desktop_config.json`:
 ```
 "mcp-google-cse": {
     "command": "uvx",
-    "args": [],
+    "args": ["mcp-google-cse"],
     "env": {
         "API_KEY": "",
         "ENGINE_ID": ""
